@@ -1,4 +1,9 @@
 # Sorumatik Bileşen — yönetim panelinden değiştirilebilen ayarlar
+sk_hero_alani:
+  type: bool
+  default: true
+  description: "Ana sayfada arama kutusu, fotoğraf yükle butonu ve ders şeridi içeren karşılama alanını (Hero) göster."
+
 sk_soru_sor_dugmesi:
   type: bool
   default: true

@@ -7,9 +7,13 @@ devre dışı bırakılabilir.
 
 ## Özellikler
 
+- **Ana Sayfa Hero Karşılama & Arama** — "Aklındaki soruyu sor, birlikte çözelim."
+  karşılama başlığı, büyük arama kutusu, "Soru Fotoğrafı Yükle" butonu ve popüler
+  sınav etiketleri (`YKS/AYT`, `LGS`, `9-12. Sınıf`, `Üniversite`, vb.).
+- **Ders Kapsülleri Şeridi** — Yatay kaydırılabilir, tek tıkla kategoriye giden
+  ve aktif kategoriyi vurgulayan modern ders hapları (`Matematik`, `Fizik`, `Kimya`, vb.).
 - **Başlıkta "Soru Sor" düğmesi** — mavi, yuvarlak köşeli düğme `/new-topic`
-  adresine gider; Discourse başlığı yeniden çizdiğinde gözlemciyle yeniden
-  eklenir.
+  adresine gider; tıklandığında doğrudan Discourse composer'ını açar.
 - **"Cevap bekliyor" kehribar rozeti** — cevapsız konuların kartlarında
   görünür; kartın cevap sayısı da kehribara döner, cevap bekleyenler bir
   bakışta ayırt edilir.
@@ -28,6 +32,7 @@ devre dışı bırakılabilir.
 
 | Ayar | Öntanımlı | İşlev |
 |---|---|---|
+| `sk_hero_alani` | açık | Ana sayfada karşılama, arama ve ders şeridini göster |
 | `sk_soru_sor_dugmesi` | açık | Başlıktaki Soru Sor düğmesi |
 | `sk_bekleyen_rozeti` | açık | Cevapsız kartlarda kehribar rozet |
 | `sk_kategori_renkleri` | 8 ders listesi | `slug=#renk` çiftleri, virgülle ayrılır |

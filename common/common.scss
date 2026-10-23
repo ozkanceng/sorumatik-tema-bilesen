@@ -1,7 +1,7 @@
 // =========================================================================
-// Sorumatik Bileşen — JS'li ek öğelerin stilleri (v1.1.0)
-// Ana tema (sorumatik-tema) ile birlikte kullanılır; token yoksa
-// öntanımlı marka değerleri devreye girer.
+// Sorumatik Bileşen — Ortak Stiller (v1.2.0)
+// Hero Karşılama Alanı, Arama Kutusu, Ders Kapsülleri Şeridi
+// ve Başlıkta Soru Sor Butonu Stilleri
 // =========================================================================
 
 // ---- Başlıkta "Soru Sor" düğmesi ----
@@ -14,18 +14,21 @@
 .sk-soru-sor {
   background: var(--sk-brand, #1D5BD6);
   border-radius: 9px;
-  color: var(--header_primary, #FFFFFF);
+  color: #FFFFFF !important;
   display: inline-flex;
   font-size: 14px;
   font-weight: 700;
   margin-right: 12px;
   padding: 8px 16px;
+  text-decoration: none;
+  transition: all 0.18s ease;
 
   &:hover,
   &:focus {
     background: var(--sk-brand-dark, #1647A8);
-    color: var(--header_primary, #FFFFFF);
+    color: #FFFFFF !important;
     text-decoration: none;
+    transform: translateY(-1px);
   }
 }
 
@@ -50,9 +53,258 @@
   font-weight: 700;
 }
 
-// Klavye odak halkası (ana temayla aynı desen)
+// Klavye odak halkası
 .sk-soru-sor:focus-visible {
   border-radius: 4px;
   outline: 3px solid var(--sk-focus, #7FA6EE);
   outline-offset: 2px;
+}
+
+// =========================================================================
+// HERO KARŞILAMA ALANI (2026 EĞİTİM TASARIM MOCKUP BİREBİR)
+// =========================================================================
+
+.sk-hero-section {
+  padding: 36px 0 20px;
+  position: relative;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -40px;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+.sk-hero-headline {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: clamp(26px, 3.8vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    line-height: 1.25;
+    color: var(--sk-ink, #0F172A);
+    margin: 0 0 10px;
+
+    em {
+      font-style: normal;
+      background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    color: var(--sk-ink-soft, #64748B);
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 620px;
+  }
+}
+
+// Arama ve Fotoğraf Yükleme Çubuğu
+.sk-hero-search-box {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 24px auto 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.sk-hero-search-input-wrap {
+  flex: 1;
+  position: relative;
+
+  svg {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--sk-ink-faint, #94A3B8);
+    pointer-events: none;
+  }
+}
+
+.sk-hero-search-input {
+  width: 100%;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--sk-card, #FFFFFF);
+  border: 2px solid var(--sk-line, #E2E8F0);
+  padding: 0 18px 0 50px;
+  font-size: 15.5px;
+  color: var(--sk-ink, #0F172A);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+
+  &:focus {
+    border-color: #2563EB;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18), 0 4px 14px rgba(15, 23, 42, 0.05);
+  }
+}
+
+.sk-btn-upload-photo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  height: 52px;
+  padding: 0 22px;
+  border-radius: 14px;
+  background: var(--sk-card, #FFFFFF);
+  border: 2px solid var(--sk-line, #E2E8F0);
+  color: var(--sk-ink, #0F172A);
+  font-weight: 700;
+  font-size: 14.5px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #2563EB;
+    color: #2563EB;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+  }
+}
+
+// Popüler Sınav Etiketleri
+.sk-quick-tags {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.sk-tag-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sk-ink-faint, #94A3B8);
+  margin-right: 2px;
+}
+
+.sk-tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--sk-card, #FFFFFF);
+  border: 1px solid var(--sk-line, #E2E8F0);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sk-ink-soft, #475569);
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  transition: all 0.18s ease;
+
+  &:hover {
+    border-color: #2563EB;
+    color: #2563EB;
+    background: var(--sk-brand-tint, #EFF6FF);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+}
+
+// Ders Kapsülleri Şeridi (Yatay Kaydırılabilir)
+.sk-subject-bar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 28px 0 10px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.sk-sub-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--sk-card, #FFFFFF);
+  border: 1.5px solid var(--sk-line, #E2E8F0);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--sk-ink-soft, #475569);
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  transition: all 0.18s ease;
+  flex-shrink: 0;
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  .sk-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--pill-color, #2563EB);
+  }
+
+  &:hover,
+  &.active {
+    border-color: var(--pill-color, #2563EB);
+    color: var(--pill-color, #2563EB);
+    background: var(--pill-bg, #EFF6FF);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+    text-decoration: none;
+  }
+}
+
+// Mobilde Hero ve Arama Kutusu Düzeni
+@media (max-width: 700px) {
+  .sk-hero-section {
+    padding: 24px 0 16px;
+  }
+
+  .sk-hero-search-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sk-hero-search-input,
+  .sk-btn-upload-photo {
+    height: 48px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sk-subject-bar {
+    margin: 20px 0 6px;
+  }
 }
