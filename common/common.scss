@@ -1,0 +1,56 @@
+// =========================================================================
+// Sorumatik Bileşen — JS'li ek öğelerin stilleri
+// Ana tema (sorumatik-tema) ile birlikte kullanılır; token yoksa
+// öntanımlı marka değerleri devreye girer.
+// =========================================================================
+
+// ---- Başlıkta "Soru Sor" düğmesi ----
+.sk-soru-sor-item {
+  align-items: center;
+  display: flex;
+  list-style: none;
+}
+
+.sk-soru-sor {
+  background: var(--sk-brand, #1D5BD6);
+  border-radius: 999px;
+  color: var(--header_primary, #FFFFFF);
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+  padding: 7px 15px;
+
+  &:hover,
+  &:focus {
+    background: var(--sk-brand-dark, #1647A8);
+    color: var(--header_primary, #FFFFFF);
+    text-decoration: none;
+  }
+}
+
+// ---- "Cevap bekliyor" kehribar rozeti ----
+.sk-bekleyen {
+  background: var(--sk-amber-tint, #FDF2DD);
+  border-radius: 999px;
+  color: var(--sk-amber, #96590A);
+  display: inline-flex;
+  font-size: 12.5px;
+  font-weight: 700;
+  margin-left: 8px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+// Cevapsız kartlarda cevap sayısı kehribara döner
+.sk-unanswered .badge-posts {
+  color: var(--sk-amber, #96590A);
+  font-weight: 700;
+}
+
+// Klavye odak halkası (ana temayla aynı desen)
+.sk-soru-sor:focus-visible {
+  border-radius: 4px;
+  outline: 3px solid var(--sk-focus, #7FA6EE);
+  outline-offset: 2px;
+}

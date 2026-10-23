@@ -1,0 +1,15 @@
+# Sorumatik Bileşen — yönetim panelinden değiştirilebilen ayarlar
+sk_soru_sor_dugmesi:
+  type: bool
+  default: true
+  description: "Başlıkta mavi 'Soru Sor' düğmesi göster."
+
+sk_bekleyen_rozeti:
+  type: bool
+  default: true
+  description: "Cevapsız soruların kartlarına kehribar 'Cevap bekliyor' rozeti ekle."
+
+sk_kategori_renkleri:
+  type: string
+  default: "matematik=#1D5BD6, fizik=#6D3AD6, kimya=#0E8F80, biyoloji=#3A8A46, turkce=#D14A2B, tarih=#A26414, cografya=#0E7490, ingilizce=#B0398E"
+  description: "Kart renk şeritleri: slug=#renk çiftleri, virgülle ayrılmış. Ana temadaki sabit eşlemeyi buradan değiştirebilirsiniz."
