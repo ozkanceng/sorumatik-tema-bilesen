@@ -102,13 +102,17 @@ export default apiInitializer("1.0", (api) => {
   function resimleriIsle() {
     if (s.sk_resim_onizleme === false) return;
     try {
-      const container = Discourse.__container__;
+      const container = api.container || Discourse.__container__;
       if (!container) return;
 
+      const router = container.lookup("service:router");
+      const discovery = container.lookup("service:discovery");
+
       const topics =
-        container.lookup("controller:discovery/topics")?.model?.topics ||
-        container.lookup("controller:discovery")?.model?.topics ||
-        container.lookup("route:discovery/topics")?.currentModel?.topics ||
+        router?.currentRoute?.attributes?.topics ||
+        discovery?.model?.topics ||
+        discovery?.topicList?.topics ||
+        container.lookup("controller:discovery/latest")?.model?.topics ||
         [];
 
       if (!topics.length) return;
