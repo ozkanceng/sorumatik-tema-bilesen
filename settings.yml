@@ -4,6 +4,11 @@ sk_hero_alani:
   default: true
   description: "Ana sayfada arama kutusu, fotoğraf yükle butonu ve ders şeridi içeren karşılama alanını (Hero) göster."
 
+sk_resim_onizleme:
+  type: bool
+  default: true
+  description: "Ana sayfada fotoğraflı soruların kartlarına küçük resim önizlemesi (thumbnail) ekle."
+
 sk_soru_sor_dugmesi:
   type: bool
   default: true

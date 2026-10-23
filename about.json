@@ -3,7 +3,7 @@
   "about_url": "https://github.com/ozkanceng/sorumatik-tema-bilesen",
   "license_url": "https://github.com/ozkanceng/sorumatik-tema-bilesen/blob/main/LICENSE",
   "authors": "ozkanceng",
-  "theme_version": "1.2.0",
+  "theme_version": "1.3.0",
   "minimum_discourse_version": "3.2.0",
   "component": true
 }
